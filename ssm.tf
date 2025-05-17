@@ -1,7 +1,7 @@
-resource "aws_ssm_parameter" "db_user" {
-  name  = "/lanchonete/db_user"
+resource "aws_ssm_parameter" "db_username" {
+  name  = "/lanchonete/db_username"
   type  = "SecureString"
-  value = var.db_user
+  value = var.db_username
 }
 
 resource "aws_ssm_parameter" "db_password" {
