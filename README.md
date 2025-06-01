@@ -3,12 +3,13 @@
 Este é o repositório que contém códigos Terraform para gerenciar infraestrutura na nuvem da aplicação [Lanchonete App](https://github.com/ns-fiap-tc/tech_challenge_fiap). Nele você encontrará arquivos de configuração do Terraform que definem a infraestrutura que cria um banco de dados RDS Postgres na AWS de acordo com a infra-base.
 
 ## Passos para o provisionamento
+
 > Para completo funcionamento da plataforma, é necessário seguir o seguinte fluxo de provisionamento:
+>
 > 1. A provisão do repositório da infra-base; [infra-base](https://github.com/ns-fiap-tc/infra-base)
 > 2. A provisão deste repositório: [infra-bd](https://github.com/ns-fiap-tc/infra-bd);
 > 3. A provisão da aplicação principal e mock de pagamento em [tech_challenge_fiap](https://github.com/ns-fiap-tc/tech_challenge_fiap).
 > 4. A provisão da lambda e api gateway: [lambda](https://github.com/ns-fiap-tc/lambda);
-
 
 ## Como rodar o projeto
 
@@ -80,6 +81,7 @@ terraform init
 ## Membros
 
 ## ✨ Contribuidores
-* Guilherme Fausto - RM 359909
-* Nicolas Silva - RM 360621
-* Rodrigo Medda Pereira - RM 360575
+
+- Guilherme Fausto - RM 359909
+- Nicolas Silva - RM 360621
+- Rodrigo Medda Pereira - RM 360575
