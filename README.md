@@ -18,7 +18,7 @@ Este é o repositório que contém códigos Terraform para gerenciar infraestrut
   <summary>Passo a passo</summary>
 
 #### 📖 Resumo
-Este repositório possui uma pipeline automatizada chamada `Terraform Deploy` que permite **provisionar a infraestrutura base na AWS automaticamente** sempre que houver um push na branch `main`.
+Este repositório possui uma pipeline automatizada chamada `Terraform Deploy` que permite **provisionar a infraestrutura do banco de dados** sempre que houver um push na branch `main`.
 
 A branch é protegida e só aceita alterações que venham de PRs previamente aprovadas.
 
