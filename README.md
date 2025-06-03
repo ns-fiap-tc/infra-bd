@@ -61,7 +61,7 @@ flowchart TD
 ```
 
 #### Benefícios desse fluxo
-- 🤖 Automatização do deploy da infraestrutura base
+- 🤖 Automatização do deploy do banco de dados
 - ✅ Redução de erros manuais
 - 🔐 Segurança no uso de credenciais via GitHub Secrets
 - 🔁 Reprodutibilidade garantida
