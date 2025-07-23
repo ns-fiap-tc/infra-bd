@@ -6,6 +6,10 @@ data "aws_eks_cluster_auth" "cluster" {
   name = data.aws_eks_cluster.lanchonete_cluster.name
 }
 
+data "aws_eks_cluster_auth" "lanchonete_cluster_auth" {
+  name = data.aws_eks_cluster.lanchonete_cluster.name
+}
+
 data "aws_vpc" "lanchonete_vpc" {
   filter {
     name   = "cidr"
