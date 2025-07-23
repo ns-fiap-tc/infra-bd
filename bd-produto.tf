@@ -1,5 +1,5 @@
-resource "aws_db_subnet_group" "lanchonete_db_subnet_group" {
-  name       = "lanchonete_db_subnet_group"
+resource "aws_db_subnet_group" "lanchonete_db_produto_subnet_group" {
+  name       = "lanchonete_db_produto_subnet_group"
   subnet_ids = [
     data.aws_subnet.lanchonete_private_subnet_1.id,
     data.aws_subnet.lanchonete_private_subnet_2.id
@@ -10,9 +10,9 @@ resource "aws_db_subnet_group" "lanchonete_db_subnet_group" {
   }
 }
 
-resource "aws_security_group" "lanchonete_db_sg" {
-  name        = "lanchonete_db_sg"
-  description = "Security group para o RDS"
+resource "aws_security_group" "lanchonete_db_produto_sg" {
+  name        = "lanchonete_db_produto_sg"
+  description = "Security group para o RDS produto"
   vpc_id      = data.aws_vpc.lanchonete_vpc.id
 
   # Regras de segurança (exemplo para permitir tráfego de dentro da VPC)
@@ -31,28 +31,26 @@ resource "aws_security_group" "lanchonete_db_sg" {
   }
 
    tags = {
-     Name = "lanchonete_db_sg"
+     Name = "lanchonete_db_produto_sg"
    }
 }
 
 # Database
-resource "aws_db_instance" "lanchonete_database" {
+resource "aws_db_instance" "lanchonete_produto_database" {
   allocated_storage    = 20
   engine               = "postgres"
   engine_version       = "16.6"
   instance_class       = "db.t3.micro"
-  identifier           = var.db_identifier
-  username             = var.db_username
-  password             = var.db_password
-  db_name              = var.db_name
+  identifier           = var.db_produto_identifier
+  username             = var.db_produto_username
+  password             = var.db_produto_password
+  db_name              = var.db_produto_name
   skip_final_snapshot  = true
-  #multi_az          = false
-  #publicly_accessible = true
 
-  vpc_security_group_ids = [aws_security_group.lanchonete_db_sg.id]
-  db_subnet_group_name   = aws_db_subnet_group.lanchonete_db_subnet_group.name
+  vpc_security_group_ids = [aws_security_group.lanchonete_db_produto_sg.id]
+  db_subnet_group_name   = aws_db_subnet_group.lanchonete_db_produto_subnet_group.name
 
   tags = {
-    Name = "lanchonete_database"
+    Name = "lanchonete_produto_database"
   }
 }
