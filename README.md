@@ -1,15 +1,15 @@
 # FIAP Tech Challenge - Infra banco de dados
 
-Este é o repositório que contém códigos Terraform para gerenciar infraestrutura na nuvem da aplicação [Lanchonete App](https://github.com/ns-fiap-tc/tech_challenge_fiap). Nele você encontrará arquivos de configuração do Terraform que definem a infraestrutura que cria um banco de dados RDS Postgres na AWS de acordo com a infra-base.
+Este é o repositório que contém códigos Terraform para gerenciar infraestrutura na nuvem da aplicação [Lanchonete App](https://github.com/ns-fiap-tc/tech_challenge_fiap). Nele você encontrará arquivos de configuração do Terraform que definem a infraestrutura que cria os banco de dados RDS Postgres e MongoDB na AWS de acordo com a infra-base.
 
 ## Passos para o provisionamento
-
 > Para completo funcionamento da plataforma, é necessário seguir o seguinte fluxo de provisionamento:
->
-> 1. A provisão do repositório da infra-base; [infra-base](https://github.com/ns-fiap-tc/infra-base)
-> 2. A provisão deste repositório: [infra-bd](#como-rodar-o-projeto);
-> 3. A provisão da aplicação principal e mock de pagamento em [tech_challenge_fiap](https://github.com/ns-fiap-tc/tech_challenge_fiap).
-> 4. A provisão da lambda e api gateway: [lambda](https://github.com/ns-fiap-tc/lambda);
+> 1. A provisão deste repositório; [infra-base](https://github.com/ns-fiap-tc/infra-base)
+> 2. A provisão do repositório dos bancos de dados: [infra-bd](#como-rodar-o-projeto)
+> 3. A provisão do repositório do microsserviço de categoria: [tech_challenge_fiap_ms_categoria](https://github.com/ns-fiap-tc/tech_challenge_fiap_ms_categoria);
+> 4. A provisão do repositório do microsserviço de produto: [tech_challenge_fiap_ms_produto](https://github.com/ns-fiap-tc/tech_challenge_fiap_ms_produto);
+> 5. A provisão do repositório do microsserviço de pagamento e pagamento-mock: [tech_challenge_fiap_ms_pagamento](https://github.com/ns-fiap-tc/tech_challenge_fiap_ms_pagamento);
+> 6. A provisão da aplicação principal: [tech_challenge_fiap](https://github.com/ns-fiap-tc/tech_challenge_fiap).
 
 ## 🚀 Como rodar o projeto
 
@@ -99,13 +99,23 @@ cd infra-bd
 3. **Defina as variáveis necessárias ao nível de ambiente, criando um arquivo `.env` de acordo com o arquivo `.env.exemplo`. Exemplo:**:
 
 ```bash
-DB_USERNAME="meu-usuario"
-DB_PASSWORD="minha-senha"
-DB_NAME="meu-banco-dados"
-DB_PORT="1234"
-DB_IDENTIFIER="id-meu-banco"
-VPC_NAME="minha-vpc"
-CLUSTER_NAME="meu-cluster"
+DB_LANCHONETE_USERNAME="lanchuser"
+DB_LANCHONETE_PASSWORD="lanchpass"
+DB_LANCHONETE_NAME="lanchdb"
+DB_LANCHONETE_IDENTIFIER="lanchonete-db"
+DB_CATEGORIA_USERNAME="lanch_cat_user"
+DB_CATEGORIA_PASSWORD="lanchcatpass"
+DB_CATEGORIA_NAME="lanch_cat_db"
+DB_CATEGORIA_IDENTIFIER="lanchonete-categoria-db"
+DB_PRODUTO_USERNAME="lanch_prod_user"
+DB_PRODUTO_PASSWORD="lanchprodpass"
+DB_PRODUTO_NAME="lanch_prod_db"
+DB_PRODUTO_IDENTIFIER="lanchonete-produto-db"
+DB_PAGAMENTO_USERNAME="lanch_pag_user"
+DB_PAGAMENTO_PASSWORD="lanchpagpass"
+DB_PAGAMENTO_NAME="lanch_pag_db"
+VPC_NAME="minha_vpc"
+CLUSTER_NAME="meu_cluster"
 ```
 
 4. **Inicialize o diretório Terraform**:
