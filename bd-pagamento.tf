@@ -18,7 +18,7 @@ resource "kubernetes_secret" "secrets-mongodbpag" {
 
 
 # Deployment do MongoDB
-resource "kubernetes_deployment" "mongodbpag_deployment" {
+resource "kubernetes_deployment" "mongodbpag-deployment" {
   metadata {
     name = "mongodbpag"
   }
@@ -47,6 +47,7 @@ resource "kubernetes_deployment" "mongodbpag_deployment" {
               name = kubernetes_secret.secrets-mongodbpag.metadata[0].name
             }
           }
+          args = ["--auth"]
           # port {
           #   container_port = 15672
           # }
@@ -57,7 +58,7 @@ resource "kubernetes_deployment" "mongodbpag_deployment" {
 }
 
 # Serviço do MongoDB
-resource "kubernetes_service" "mongodbpag_service" {
+resource "kubernetes_service" "mongodbpag-service" {
   metadata {
     name = "mongodbpag"
   }
