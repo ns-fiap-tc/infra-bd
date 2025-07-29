@@ -32,5 +32,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
-          TF_VAR_db_username: ${{ secrets.TF_VAR_db_username }}
-          TF_VAR_db_password: ${{ secrets.TF_VAR_db_password }}
+          TF_VAR_db_lanchonete_username: ${{ secrets.TF_VAR_DB_LANCHONETE_USERNAME }}
+          TF_VAR_db_lanchonete_password: ${{ secrets.TF_VAR_DB_LANCHONETE_PASSWORD }}
+          TF_VAR_db_categoria_username: ${{ secrets.TF_VAR_DB_CATEGORIA_USERNAME }}
+          TF_VAR_db_categoria_password: ${{ secrets.TF_VAR_DB_CATEGORIA_PASSWORD }}
+          TF_VAR_db_pagamento_username: ${{ secrets.TF_VAR_DB_PAGAMENTO_USERNAME }}
+          TF_VAR_db_pagamento_password: ${{ secrets.TF_VAR_DB_PAGAMENTO_PASSWORD }}
+          TF_VAR_db_produto_username: ${{ secrets.TF_VAR_DB_PRODUTO_USERNAME }}
+          TF_VAR_db_produto_password: ${{ secrets.TF_VAR_DB_PRODUTO_PASSWORD }}
